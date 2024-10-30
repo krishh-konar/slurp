@@ -210,7 +210,7 @@ jobs:
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           keys:
             - v1-pkg-cache
-      - run: go get -u github.com/Clever/csvlint/cmd/csvlint
+      - run: go install github.com/Clever/csvlint/cmd/csvlint@latest
       - run:
           name: 🧹 Run CSV lint
           command: |
@@ -254,7 +254,7 @@ jobs:
 
   php:
     docker:
-      - image: cimg/php:8.3.12
+      - image: cimg/php:8.3.13
     working_directory: ~/repo
     steps:
       - checkout
